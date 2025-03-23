@@ -7,9 +7,9 @@ from . models import UserBankAccount, UserAddress
 
 # combined three models (django built-in user, UserBankAccount, UserAddress) data and converted to one form
 class UserRegistrationForm(UserCreationForm):
-    account_type = forms.CharField(max_length=10, choices=ACCOUNT_TYPE)
+    account_type = forms.ChoiceField(choices=ACCOUNT_TYPE)
     birth_date = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
-    gender = forms.CharField(max_length=10, choices=GENDER_TYPE)
+    gender = forms.ChoiceField(choices=GENDER_TYPE)
     street_address = forms.CharField(max_length=100)
     city = forms.CharField(max_length=100)
     postal_code = forms.IntegerField()
