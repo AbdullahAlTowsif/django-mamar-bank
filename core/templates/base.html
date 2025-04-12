@@ -9,9 +9,13 @@
 <body class="bg-indigo-600">
     {% include "navbar.html" %}
     <div>
+        <div class="bg-white lg:container lg:mx-auto" id="main">
+            {% include 'messages.html' %}
+        </div>
         {% block body %}
         
         {% endblock %}
     </div>
+    {% include "footer.html" %}
 </body>
 </html>
